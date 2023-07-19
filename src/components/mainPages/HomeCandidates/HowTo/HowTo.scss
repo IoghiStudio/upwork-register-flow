@@ -1,0 +1,178 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.howto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+
+  @include onTablet {
+    padding-top: 80px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1110px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      border-bottom: 2px solid rgba(110, 110, 110, 0.3);
+      padding-bottom: 60px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 41px;
+      align-items: flex-start;
+    }
+  }
+
+  &__video {
+    background-color: black;
+    width: 330px;
+    height: 176px;
+
+    @include onTablet {
+      width: 550px;
+      height: 276px;
+    }
+
+    @include onDesktop {
+      width: 445px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-monserrat);
+    font-weight: 900;
+    line-height: 36px;
+    font-size: 28px;
+    text-align: center;
+    color: $black;
+
+    @include onTablet {
+      font-size: 38px;
+      line-height: 46px;
+    }
+
+    
+    @include onDesktop {
+      text-align: left;
+    }
+
+    &-thin {
+      font-weight: 100;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 24px;
+
+      @include onTablet {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: $black;
+    
+    @include onTablet {
+      max-width: 740px;
+      margin-bottom: 38px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      max-width: 624px;
+    }
+  }
+  
+  &__button {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 290px;
+    background-color: $blue;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 1.6px;
+    text-align: center;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+
+    @include onTablet {
+      height: 50px;
+      width: 330px;
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    @include onDesktop {
+      align-self: flex-start;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    gap: 50px;
+    
+    @include onTablet {
+      flex-direction: row;
+      gap: 35px;
+    }
+
+    @include onDesktop {
+      max-width: 1100px;
+    }
+  }
+
+  &__advantage {
+
+    &-title {
+      font-family: var(--font-monserrat);
+      color: $black;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 58px;
+      text-align: center;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+    }
+
+    &-text {
+      color: $gray;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}

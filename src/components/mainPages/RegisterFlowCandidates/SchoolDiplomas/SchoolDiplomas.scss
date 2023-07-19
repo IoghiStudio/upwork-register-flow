@@ -1,0 +1,553 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.sc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+  max-width: 1080px;
+  min-height: 600px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 48px;
+  }
+
+  @include onLaptop {
+    padding: 60px;
+  }
+
+  @include onDesktop {
+    padding: 80px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-family: var(--font-monserrat);
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: -1.2px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    font-family: var(--font-monserrat);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: 0.32px;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 750px;
+    border: 1px solid $gray;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    transition: transform 500ms;
+    transform: translateY(1000px);
+    
+    &--active {
+      transform: translateY(0px);
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      padding: 0 32px 32px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    &-title {
+      padding: 32px 32px 16px;
+      font-family: var(--font-monserrat);
+      font-size: 40px;
+      line-height: 42px;
+      letter-spacing: -0.42px;
+      font-weight: 500;
+      color: $black;
+    }
+
+    &-cancel {
+      width: 50px;
+      height: 20px;
+      background-color: rgb(178, 179, 221);
+      cursor: pointer;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 32px;
+    border-top: 1px solid rgba(110, 110, 110, 0.4);;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 24px;
+    cursor: pointer;
+
+    &-delete {
+      margin-right: 16px;
+      color: $gray;
+      font-size: 16px;
+    }
+
+    &-save {
+      color: #fff;
+      background-color: $blue;
+      border-radius: 20px;
+    }
+  }
+
+  &__input {
+    &-container {
+      margin-bottom: 24px;
+    }
+
+    height: 42px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+
+    &:focus {
+      outline: none;
+    }
+
+    &-title {
+      position: relative;
+      left: 4px;
+      color: $black;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 100px;
+    resize: vertical;
+  }
+
+  &__checkbox {
+    &-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    margin-right: 4px;
+    flex-shrink: 0;
+    appearance: none;
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    border: 2px solid $gray;
+    opacity: 0.3;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--active {
+      background-image: url('../../../../img/icons/checked-icon.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 0;
+      opacity: 1;
+    }
+  }
+
+  &__dates {
+    &-container {
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 18px;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+    }
+    
+    gap: 5px;
+    display: flex;
+  }
+
+  &__date {
+    &-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        width: 50%;
+      }
+    }
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+  }
+
+  &__present {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background-color: rgb(189, 189, 189);
+    border-radius: 20px;
+    padding-left: 16px;
+    height: 42px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $gray;
+    cursor: not-allowed;
+  }
+
+  &__add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 2px solid $blue;
+    border-radius: 20px;
+    cursor: pointer;
+
+    @include onTablet {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 0 150px;
+      padding: 35px;
+      width: 490px;
+      height: 250px;
+      border-style: dashed;
+      border-color: rgba(110, 110, 110, 0.4);
+      background-color: rgb(250, 250, 250);
+    }
+
+    &--empty {
+      margin: 0;
+    }
+
+    &--inactive {
+      background-color: rgb(186, 197, 202);
+    }
+
+    &-icon {
+      margin-right: 16px;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../../../../img/icons/plus-icon-skinny.svg');
+
+      @include onTablet {
+        margin: 70px 0px 16px;
+        width: 40px;
+        height: 40px;
+        background-image: url('../../../../img/icons/plus-icon-filled.svg');
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      color: $blue;
+
+      @include onTablet {
+        color: $gray;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__containers {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    @include onTablet {
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding: 30px 75px 30px 150px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    max-height: 250px;
+    margin-bottom: 24px;
+    padding: 24px 12px;
+    border: 1px solid rgba(110, 110, 110, 0.4);
+    border-radius: 16px;
+    color: $black;
+    overflow: hidden;
+    
+    @include onTablet {
+      margin-bottom: 0;
+      margin-right: 30px;
+      width: 490px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 24px 0 12px;
+    }
+
+    &-main-icon {
+      display: none;
+      position: relative;
+      top: -10px;
+      flex-shrink: 0;
+      width: 80px;
+      height: 100px;
+      background-image: url('../../../../img/icons/document-icon.svg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &-icons {
+      position: relative;
+      top: -8px;
+      left: -8px;
+      display: flex;
+      gap: 8px;
+    }
+
+    &-icon {
+      &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid rgb(201, 201, 201);
+        cursor: pointer;
+        transition: background-color 300ms;
+        
+        &:hover {
+          background-color: #f7f7f7;
+        }
+      }
+
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &--edit {
+        background-image: url('../../../../img/icons/edit-pen-icon.svg');
+      }
+
+      &--delete {
+        background-image: url('../../../../img/icons/delete-icon.svg');
+      }
+    }
+
+    &-job {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.18px;
+    }
+    
+    &-company {
+      margin-bottom: 4px;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.32px;
+    }
+    
+    &-date {
+      display: flex;
+      margin-bottom: 4px;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.32px;
+    }
+    
+    &-description {
+      margin-top: 12px;
+      color: $gray;
+      font-size: 16px;
+      letter-spacing: 0.32px;
+      overflow-y: hidden;
+    }
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 707px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-monserrat);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+    cursor: pointer;
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-flag {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background-color: rgb(20, 46, 119);
+
+      &--phone {
+        margin: 0;
+      }
+    }
+    
+    &-arrow {
+      width: 10px;
+      height: 6px;
+      background-image: url('../../../../img/icons/arrow-down-black.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: 3;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    height: 210px;
+    flex-grow: 1;
+    background-color: $white-gray-2;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &--dates {
+      top: 50px;
+    }
+
+    &--country {
+      height: 180px;
+    }
+
+    &--phone {
+      position: absolute;
+      top: 46px;
+    }
+
+    &--active {
+      display: flex;
+    }
+    
+    &-input {
+      margin-bottom: 2px;
+      border: none;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      border: 1px solid $gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      cursor: pointer;
+      // transition: transform 0ms;
+
+      &:hover {
+        background-color: $white-gray;
+        transition: transform 400ms;
+        padding-left: 2px;
+      }
+    }
+  } 
+}

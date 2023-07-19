@@ -1,0 +1,327 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.c {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+  
+  @include onTablet {
+    padding: 48px;
+    padding-bottom: 150px;
+  }
+  
+  @include onLaptop {
+    padding: 60px;
+    padding-bottom: 150px;
+  }
+  
+  @include onDesktop {
+    padding: 80px;
+    padding-bottom: 150px;
+  }
+
+  &__board {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 120px;
+    overflow-y: scroll;
+    gap: 4px;
+    margin: 10px 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid $gray;
+
+    &-item {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+      color: white;
+
+      padding: 4px 8px;
+      height: 20px;
+      border-radius: 10px;
+      font-size: 14px;
+
+      &-cross {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../../../img/icons/icons8-cross.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-family: var(--font-monserrat);
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: -1.2px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    font-family: var(--font-monserrat);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: 0.32px;
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    // max-width: 400px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      
+      @include onTablet {
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-monserrat);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+    }
+
+    &--types {
+      border-bottom: 1px solid $gray;
+      
+      @include onTablet {
+        margin-bottom: 0;
+        border-bottom: 0;
+        border-right: 1px solid $gray;
+      }
+    }
+  }
+
+  &__no-relocation-text {
+    margin-bottom: 10px;
+    font-family: var(--font-monserrat);
+    font-size: 14px;
+    font-weight: 400;
+    color: $gray;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    
+    @include onTablet {
+      width: 50%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    &-left {
+      @include onTablet {
+        width: 50%;
+      }
+    }
+    
+    &-right {
+      @include onTablet {
+        width: 50%;
+      }
+    }
+  }
+
+  &__relocation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    flex-shrink: 0;
+    height: 42px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+
+    &:focus {
+      outline: none;
+    }
+
+    &-title {
+      position: relative;
+      left: 4px;
+      color: $black;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+    cursor: pointer;
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-flag {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background-color: rgb(20, 46, 119);
+    }
+    
+    &-arrow {
+      width: 10px;
+      height: 6px;
+      background-image: url('../../../../img/icons/arrow-down-black.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: 3;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    height: 180px;
+    flex-grow: 1;
+    background-color: $white-gray-2;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &--active {
+      display: flex;
+    }
+
+    &--currency {
+      height: 140px;
+    }
+    
+    &-input {
+      margin-bottom: 2px;
+      border: none;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      border: 1px solid $gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $white-gray;
+        transition: transform 400ms;
+        padding-left: 2px;
+      }
+    }
+  }
+
+  
+  &__checkbox {
+    &-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    margin-right: 4px;
+    flex-shrink: 0;
+    appearance: none;
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    border: 2px solid $gray;
+    opacity: 0.3;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--active {
+      background-image: url('../../../../img/icons/checked-icon.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 0;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,193 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 68px 40px 35px;
+  color: #fff;
+  background-color: $black;
+
+  @include onTablet {
+    padding: 120px 60px 82px;
+  }
+
+  @include onDesktop {
+    padding: 120px 60px 52px;
+  }
+
+  &__top {
+    margin-bottom: 65px;
+
+    @include onTablet {
+      margin-bottom: 118px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+    
+    &-title {
+      &-top {
+        font-size: 32px;
+
+        @include onTablet {
+          font-size: 56px;
+          display: inline;
+        }
+      }
+      
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 48px;
+      font-weight: 700;
+      font-size: 48px;
+      font-family: var(--font-monserrat);
+
+      @include onTablet {
+        font-size: 56px;
+        line-height: 76px;
+        margin-bottom: 5px;
+      }
+    }
+    
+    &-text {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $white;
+      max-width: 500px;
+      
+      @include onTablet {
+        font-size: 18px;
+        max-width: 750px;
+      }
+    }
+    
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+
+    @include onTablet {
+      max-width: 850px;
+    }
+    
+    @include onDesktop {
+      max-width: 1090px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0px 50px;
+    }
+
+    @include onDesktopLarge {
+      max-width: 1120px;
+      gap: 10px 80px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 90px;
+    
+    @include onTablet {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 48px;
+      margin-bottom: 68px;
+    }
+
+    @include onDesktop {
+      gap: 42px;
+      max-width: 520px;
+    }
+  }
+
+  &__icon {
+    &-container {
+      &--reversed {
+        @include onTablet {
+          order: 2;
+        }
+
+        @include onDesktop {
+          order: 0;
+        }
+      }
+
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 17px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    width: 41px;
+    height: 38px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    &--domain {
+      background-image: url('../../../../img/icons/domain_FILL1_wght300_GRAD0_opsz48.svg');
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: var(--font-monserrat);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    &--reversed {
+      @include onTablet {
+        text-align: right;
+      }
+
+      @include onDesktop {
+        text-align: left;
+      }
+    }
+  }
+  
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    &--reversed {
+      @include onTablet {
+        text-align: right;
+      }
+
+      @include onDesktop {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,335 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 48px;
+  }
+
+  @include onLaptop {
+    padding: 60px;
+  }
+
+  @include onDesktop {
+    padding: 80px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-family: var(--font-monserrat);
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: -1.2px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    font-family: var(--font-monserrat);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $black;
+    letter-spacing: 0.32px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    max-width: 1080px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 1000px;
+  }
+
+  &__portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      align-self: flex-start;
+      margin-right: 50px;
+    }
+
+    &-image {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background-color: rgb(215, 233, 250);
+    }
+
+    &-upload {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      width: 146px;
+      height: 32px;
+      border: 2px solid $blue;
+      color: $blue;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &-icon {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../../../img/icons/plus-icon-skinny.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &-text {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__names {
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 500px) {
+      gap: 16px;
+      flex-direction: row;
+    }
+  }
+
+  &__dropdowns {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      gap: 16px;
+      flex-direction: row;
+    }
+  }
+
+  &__streets {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      gap: 16px;
+      flex-direction: row;
+    }
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: column;
+    
+    @include onLaptop {
+      gap: 16px;
+      flex-direction: row;
+    }
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 707px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-monserrat);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__input {
+    height: 42px;
+    padding: 0 20px;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__phone-inputs {
+    position: relative;
+    display: flex;
+    gap: 2px;
+  }
+
+  &__phone-input {
+    flex-grow: 1;
+    min-width: 50px;
+    height: 42px;
+    padding: 20px 6px 20px 70px;
+    background-color: $white-gray;
+    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &-prefix {
+      position: absolute;
+      top: 11px;
+      left: 70px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &--left {
+      max-width: 61px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &--right {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+    cursor: pointer;
+
+    &--nat {
+      padding-left: 20px;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-flag {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background-color: rgb(20, 46, 119);
+
+      &--phone {
+        margin: 0;
+      }
+    }
+    
+    &-arrow {
+      width: 10px;
+      height: 6px;
+      background-image: url('../../../../img/icons/arrow-down-black.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: 3;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    height: 210px;
+    flex-grow: 1;
+    background-color: $white-gray-2;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    
+    &--country {
+      height: 175px;
+    }
+
+    &--phone {
+      position: absolute;
+      top: 46px;
+    }
+
+    &--active {
+      display: flex;
+    }
+    
+    &-input {
+      margin-bottom: 2px;
+      border: none;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      border: 1px solid $gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      cursor: pointer;
+      // transition: transform 0ms;
+
+      &:hover {
+        background-color: $white-gray;
+        transition: transform 400ms;
+        padding-left: 2px;
+      }
+    }
+  } 
+}

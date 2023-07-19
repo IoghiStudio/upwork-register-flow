@@ -1,0 +1,282 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    align-items: center;
+    background-color: $white-gray;
+    padding: 120px 0 54px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    
+    @include onDesktop {
+      max-width: 440px;
+      border-radius: 12px;
+      background-color: #fff;
+      margin-right: 80px;
+    }
+
+    &-info {
+      padding: 60px 40px 40px;
+      max-width: 900px;
+      align-self: center;
+      
+      @include onTablet {
+        padding: 60px;
+      }
+
+      @include onDesktop {
+        padding: 60px 40px 40px;
+      }
+    }
+
+    &-header {
+      height: 130px;
+      color: #fff;
+      font-family: var(--font-monserrat);
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 130px;
+      text-align: center;
+      background-image: url('../../../../img/backgrounds/7.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+      @include onDesktop {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+    }
+
+    &-title {
+      font-family: var(--font-monserrat);
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 34px;
+      letter-spacing: 0px;
+      color: $black;
+      text-transform: uppercase;
+
+      @include onDesktop {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      color: $black;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+
+      @include onDesktop {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    background-color: $white-gray;
+    
+    @include onDesktop {
+      box-sizing: border-box;
+      padding: 60px 38px 40px;
+      border-radius: 12px;
+      border: 2px solid rgba(110, 110, 110, 0.4);
+    }
+
+    &-content {
+      align-self: center;
+      max-width: 440px;
+    }
+    
+    @include onTablet {
+      padding-top: 65px;
+    }
+
+    &-header {
+      margin-bottom: 12px;
+      font-family: var(--font-monserrat);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 29px;
+      letter-spacing: 0px;
+      text-align: center;
+      color: $black;
+    }
+
+    &-title {
+      margin-bottom: 13px;
+      font-family: var(--font-monserrat);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      text-align: center;
+      color: $black;
+
+      &--italic {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__dollar {
+    position: relative;
+    top: -20px;
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  &__price {    
+    font-family: var(--font-monserrat);
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 68px;
+  }
+
+  &__headline {
+    margin-bottom: 2px;
+    font-family: var(--font-monserrat);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 1.8px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $gray;
+  }
+
+  &__midline {
+    color: $gray;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+
+  &__divider {
+    margin: 14px 0 28px;
+    border-bottom: 2px solid $gray;
+    opacity: 0.3;
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      align-items: flex-start;
+    }
+  }
+  
+  &__benefit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      // background-color: $green;
+      background-image: url('../../../../img/icons/task_alt_FILL1_wght300_GRAD0_opsz40.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: center;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 50px;
+    margin-bottom: 24px;
+    font-family: var(--font-monserrat);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+    background-color: $blue;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottomline {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: center;
+    color: $gray;
+
+    &-link {
+      width: max-content;
+      color: $black;
+      border-bottom: 1px solid rgba(110, 110, 110, 0.3);
+    }
+
+    &--mob-tab {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.login {
+  padding: 57px 24px 75px;
+
+  &__header {
+    color: $black;
+    margin-bottom: 68px;
+    
+    @include onDesktopLarge {
+      margin-bottom: 83px;
+    }
+  }
+
+  &__wrong-input {
+    position: absolute;
+    right: 20px;
+    top: 4px;
+
+    display: none;
+    color: $red;
+    font-size: 14px;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 3px;
+    text-align: center;
+    font-family: var(--font-monserrat);
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 68px;
+    text-align: center;
+
+    @include onDesktopLarge {
+      margin-bottom: 8px;
+    }
+  }
+  
+  &__subtitle {
+    text-align: center;
+    font-family: var(--font-opensans);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+
+    &-1 {
+      @include onDesktopLarge {
+        display: none;
+      }
+    }
+
+    &-2 {
+      display: none;
+      text-align: center;
+
+      @include onDesktopLarge {
+        display: block;
+      }
+    }
+  }
+  
+  &__text {
+    text-align: center;
+    font-family: var(--font-opensans);;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+    color: $gray;
+
+    @include onDesktopLarge {
+      display: none;
+    }
+  }
+
+  &__to-company {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__label {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 662px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-monserrat);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+    }
+  }
+  
+  &__input {
+    height: 42px;
+    padding: 20px;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: none;
+    width: 320px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 320px;
+    margin: 47px 0 15px;
+    background-color: $blue;
+    border: 0;
+    border-radius: 30px;
+
+    font-family: var(--font-monserrat);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+
+    @include onDesktopLarge {
+      margin: 24px 0 104px;
+    }
+  }
+
+  &__no-account-text {
+    margin-bottom: 54px;
+    color: $black;
+    font-family: var(--font-monserrat);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+
+    @include onDesktopLarge {
+      display: none;
+    }
+  }
+
+  &__register {
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 28px;
+      text-align: center;
+      color: $gray;
+      margin-bottom: 15px;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 151px;
+      height: 40px;
+      border-radius: 30px;
+
+      font-family: var(--font-monserrat);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.4px;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+
+      &--fb {
+        background-color: #4167b2;
+      }
+
+      &--google {
+        background-color: #dd4b39;
+      }
+    }
+  }
+}

@@ -1,0 +1,278 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 32px;
+  min-height: 100vh;
+
+  @include onDesktopLarge {
+    padding-right: 0;
+  }
+
+  background-image: url('../../../../img//backgrounds/4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+    margin-bottom: 80px;
+
+    
+  @include onDesktopLarge {
+    padding-right: 32px;
+  }
+
+  }
+
+  &__menu {
+    width: 28px;
+    height: 21px;
+    background-image: url('../../../../img/icons/menu_icon-black.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    @include onTablet {
+      width: 26px;
+      height: 20px;
+    }
+  }
+
+  &__logo {
+    align-self: flex-end;
+    position: absolute;
+    top: 38px;
+    margin-right: 10px;
+    height: 28px;
+    width: 182px;
+    
+    @include onTablet {
+      align-self: center;
+      margin: 0;
+      height: 40px;
+      width: 258px;
+    }
+
+    @include onLaptop {
+      height: 30px;
+      width: 194px;
+    }
+      
+    background-image: url('../../../../img/logos/logo-color.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__right {
+    display: none;
+    width: 340px;
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
+  &__signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73px;
+    margin-right: 18px;
+    color: $black;
+    font-size: 14px;
+    line-height: 28px;
+    cursor: pointer;
+  }
+
+  &__signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 31px;
+    width: 109px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 28px;
+    background-color: $blue;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  &__language {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 109px;
+    height: 36px;
+    border-radius: 20px;
+    border: 2px solid $black;
+    cursor: pointer;
+
+    &-text {
+      width: 90px;
+      font-size: 14px;
+      line-height: 28px;
+      color: $black;
+      text-align: center;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 80px;
+      width: 10px;
+      height: 5px;
+      background-image: url('../../../../img/icons/arrow-down-black.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 500px) {
+      padding: 0 25px;
+    }
+
+    @media (min-width: 600px) {
+      padding: 0 45px;
+    }
+    
+    @include onDesktopLarge {
+      flex-direction: row;
+      gap: 135px;
+      padding-right: 0;
+      justify-content: space-between;
+      // max-width: 1500px;
+      // margin: 0 auto;
+    }
+  }
+
+  &__video {
+    align-self: center;
+    display: none;
+    width: 587px;
+    height: 389px;
+    margin-bottom: 78px;
+    background-color: #161616;
+    
+    @include onTablet {
+      display:flex;
+    }
+    
+    @include onDesktopLarge {
+      order: 1;
+      margin-bottom: 0;
+      align-self: stretch;
+      width: 45%;
+    }
+  }
+  
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    max-width: 200px;
+    margin-bottom: 75px;
+    font-family: var(--font-monserrat);
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 900;
+    text-align: left;
+    color: $black;
+
+    @include onTablet {
+      margin-bottom: 21px;
+      align-self: center;
+      max-width: 555px;
+      text-align: center;
+      font-size: 56px;
+      line-height: 68px;
+    }
+
+    &-weird {
+      @include onTablet {
+        font-size: 38px;
+        line-height: 46px;
+      }
+    }
+
+    &-weird-2 {
+      @include onTablet {
+        font-size: 62px;
+        line-height: 60px;
+      }
+    }
+  }
+  
+  &__text {
+    max-width: 520px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $black;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      align-self: center;
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 43px;
+      max-width: 550px;
+    }
+  }
+
+  &__buttons {
+    align-self: center;
+
+    @include onDesktopLarge {
+      align-self: flex-start;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: $blue;
+    color: #fff;
+    border-radius: 30px;
+    font-family: var(--font-monserrat);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 1.6px;
+    cursor: pointer;
+    
+    &--video {
+      margin-bottom: 30px;
+      color: $black;
+      border: 2px solid #161616;
+      background-color: rgba(0, 0, 0, 0);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

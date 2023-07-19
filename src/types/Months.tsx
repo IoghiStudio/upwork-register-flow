@@ -1,0 +1,15 @@
+export enum Months {
+  None = '',
+  January = 'January',
+  February = 'February',
+  March = 'March',
+  April = 'April',
+  May = 'May',
+  June = 'June',
+  July = 'July',
+  August = 'August',
+  September = 'September',
+  October = 'Octomber',
+  November = 'November',
+  December = 'December',
+}

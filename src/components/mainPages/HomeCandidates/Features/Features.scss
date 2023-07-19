@@ -1,0 +1,269 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.features {
+  padding: 82px 12px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../../img/backgrounds/1.jpg');
+
+  @include onTablet {
+    padding: 84px 12px 70px;
+  }
+
+  @include onDesktop {
+    padding: 135px 12px 80px;
+    height: 927px;
+  }
+
+  &__logo {
+    @include onDesktop {
+      &-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 246px;
+        height: 270px;
+        align-self: center;
+        margin-bottom: 40px;
+      }
+
+      width: 85px;
+      height: 58px;
+      background-image: url('../../../../img/logos/logo-vertical-white.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__stick {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+    
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: #fff;
+    opacity: 0.3;
+
+    &-1 {
+      top: 14px;
+    }
+
+    &-2 {
+      bottom: 14px;
+    }
+    
+    &-3 {
+      left: 35px;
+      top: 55px;
+      transform: rotate(-60deg);
+    }
+
+    &-4 {
+      left: 35px;
+      top: 145px;
+      transform: rotate(-120deg);
+    }
+
+    &-5 {
+      right: 35px;
+      top: 55px;
+      transform: rotate(60deg);
+    }
+
+    &-6 {
+      right: 35px;
+      top: 145px;
+      transform: rotate(120deg);
+    }
+
+  }
+  
+  &__top-title {
+    margin-bottom: 54px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 76px;
+    font-family: var(--font-monserrat);
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      &-1 {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      &-2 {
+        display: flex;
+        flex-direction: row;
+        gap: 444px;
+      }
+  
+      &-3 {
+        display: flex;
+        flex-direction: row;
+        gap: 444px;
+      }
+  
+      &-bottom {
+        position: relative;
+        top: 147px;
+      }
+    }
+  }
+
+  &__article {
+    margin-bottom: 54px;
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      max-width: 360px;
+
+      &-1 {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      
+      &-2 {
+        text-align: center;
+      }
+
+      &-3 {
+        order: 2;
+      }
+      
+      &-4 {
+        order: -1;
+        text-align: right;
+      }
+      
+      &-5 {
+        order: 2;
+      }
+      
+      &-6 {
+        order: -1;
+        text-align: right;
+      }
+    }
+
+    &-top {
+      display: flex;
+      margin-bottom: 9px;
+
+      @include onTablet {
+        margin-bottom: 11px;
+        justify-content: center;
+      }
+
+      @include onDesktop {
+        &-1 {
+          margin-bottom: 50px;
+        }
+  
+        &-3 {
+          justify-content: left;
+        }
+        
+        &-4 {
+          justify-content: right;
+        }
+  
+        &-5 {
+          justify-content: left;
+        }
+        
+        &-6 {
+          justify-content: right;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 18px;
+    width: 31px;
+    height: 25px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    //will be removed when we add image
+    
+    &--video {
+      background-image: url('../../../../img/icons/articlesIcons/video_camera_front_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+
+    &--contact {
+      background-image: url('../../../../img/icons/articlesIcons/business_center_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+
+    &--cv {
+      background-image: url('../../../../img/icons/articlesIcons/clinical_notes_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+
+    &--world {
+      background-image: url('../../../../img/icons/articlesIcons/globe_asia_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+
+    &--portfolio {
+      background-image: url('../../../../img/icons/articlesIcons/gallery_thumbnail_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+    
+    &--safe {
+      background-image: url('../../../../img/icons/articlesIcons/admin_panel_settings_FILL1_wght300_GRAD0_opsz40.svg');
+    }
+  }
+
+  &__title {
+    font-family: var(--font-monserrat);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 2px;
+    // text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #fff;
+
+    @include onDesktop {
+      // text-align: center;
+    }
+  }
+}

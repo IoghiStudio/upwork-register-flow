@@ -1,0 +1,492 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.register-candidate {
+
+  &__email-error {
+    position: absolute;
+    right: 20px;
+    top: 4px;  
+    display: none;
+    font-size: 14px;
+    color:$red;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__divider {
+    margin-bottom: 29px;
+    border-bottom: 2px solid $white-gray;
+
+    @include onDesktopLarge {
+      display: none;
+    }
+  }
+
+  &__separator {
+    border-right: 2px solid $white-gray;
+  }
+
+  &__header {
+    height: 138px;
+    padding: 57px 0 10px;
+    color: $black;
+
+    @include onTablet {
+      height: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 3px;
+    font-family: var(--font-monserrat);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 68px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 6px;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &__text {
+    color: $gray;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 46px 32px 56px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding: 47px 50px 50px;
+    }
+  }
+
+  &__labels {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+
+  }
+
+  &__labels-top {
+    display: flex;
+    flex-direction: column;
+    
+    @include onTablet {
+      margin-bottom: 14px;
+    }
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      
+      @include onTablet {
+        flex-direction: row;
+        gap: 62px;
+      }
+    }
+  }
+
+  &__labels-middle {
+    display: flex;
+    flex-direction: column;
+    
+    @include onTablet {
+      flex-direction: row;
+      gap: 62px;
+    }
+  }
+
+  &__labels-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 0;
+    
+    @include onTablet {
+      gap: 80px;
+    }
+  }
+
+  &__labels-mid-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 662px;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-family: var(--font-monserrat);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 28px;
+      letter-spacing: 1.2px;
+
+      @include onDesktopLarge {
+        max-width: 320px;
+      }
+    }
+
+    &-check {
+      position: relative;
+      left: 16px;  
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+
+      &-title {
+        position: relative;
+        top: 1px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        color: $black;
+      }
+    }
+  }
+
+  &__input {
+    height: 42px;
+    padding: 0 20px;
+    background-color: $white-gray;
+    border-radius: 30px;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include onDesktopLarge {
+      width: 320px;
+    }
+  }
+
+  &__account-type {
+    margin-bottom: 43px;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &-title {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__checkbox {
+    flex-shrink: 0;
+    appearance: none;
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    border: 2px solid $gray;
+    opacity: 0.3;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--active {
+      background-image: url('../../../../img/icons/checked-icon.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 0;
+      opacity: 1;
+    }
+  }
+
+  &__conditions {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration: underline;
+    width: fit-content;
+  }
+
+  &__submit {
+    flex-shrink: 1;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 320px;
+    margin-bottom: 26px;
+    background-color: $blue;
+    border: 0;
+    border-radius: 30px;
+
+    font-family: var(--font-monserrat);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-bottom: 0;
+      height: 50px;
+    }
+  }
+
+  &__safe {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    max-width: 300px;
+
+    &-icon {
+      width: 15px;
+      height: 18px;
+      margin-right: 16px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../../../img/icons/safe-lock-icon.svg');
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: $green;
+
+      @include onTablet {
+        font-weight: 600;
+      }
+
+      @include onDesktopLarge {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__phone-inputs {
+    display: flex;
+    gap: 2px;
+  }
+
+  &__phone-input {
+    flex-grow: 1;
+    min-width: 50px;
+    height: 42px;
+    padding: 20px;
+    background-color: $white-gray;
+    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--left {
+      max-width: 61px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &--right {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  &__form-bottom {
+    display: flex;
+    flex-direction: column;
+    
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    &-right {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      @include onTablet {
+        flex-direction: row;
+        gap: 60px;
+      }
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $black;
+    cursor: pointer;
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-flag {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      border-radius: 50%;
+      background-color: rgb(20, 46, 119);
+    }
+    
+    &-arrow {
+      width: 10px;
+      height: 6px;
+      background-image: url('../../../../img/icons/arrow-down-black.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__validate-icon {
+    position: absolute;
+    top: 39px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--valid {
+      background-image: url('../../../../img/icons/checked-icon.svg');
+    }
+
+    &--invalid {
+      background-image: url('../../../../img/icons/off.svg');
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: 3;
+    top: 75px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    height: 240px;
+    flex-grow: 1;
+    background-color: $white-gray-2;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &--active {
+      display: flex;
+    }
+    
+    &-input {
+      margin-bottom: 2px;
+      border: none;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      border: 1px solid $gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 28px;
+      color: $black;
+      cursor: pointer;
+      // transition: transform 0ms;
+
+      &:hover {
+        background-color: $white-gray;
+        transition: transform 400ms;
+        padding-left: 2px;
+      }
+    }
+  } 
+}
+
+.mb10 {
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 18px;
+  }
+}
